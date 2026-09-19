@@ -1,0 +1,7 @@
+com\meridiantrust\sentinel\rules\RapidMovementRuleTest.class
+com\meridiantrust\sentinel\rules\BehavioralDeviationRuleTest.class
+com\meridiantrust\sentinel\rules\HighRiskJurisdictionRuleTest.class
+com\meridiantrust\sentinel\rules\TestFixtures.class
+com\meridiantrust\sentinel\rules\LargeSingleTransactionRuleTest.class
+com\meridiantrust\sentinel\rules\RiskScorerTest.class
+com\meridiantrust\sentinel\rules\StructuringRuleTest.class

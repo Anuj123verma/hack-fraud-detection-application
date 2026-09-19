@@ -1,0 +1,65 @@
+spring:
+  application:
+    name: sentinel-aml
+  datasource:
+    url: jdbc:h2:file:./data/sentinel;MODE=PostgreSQL;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ${DB_PASSWORD:sa}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+server:
+  port: 8080
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+logging:
+  level:
+    com.meridiantrust.sentinel: INFO
+
+# --- AML rule configuration: tunable without redeploy by editing this file
+# or overriding via env vars, per hackathon requirement "configurable via config file".
+aml:
+  currency:
+    base: INR
+    rates:
+      INR: 1.0
+      USD: 83.0
+      EUR: 90.0
+      GBP: 105.0
+  rules:
+    large-single-txn:
+      enabled: true
+      threshold-base: 10000
+      weight: 60
+    structuring:
+      enabled: true
+      min-amount: 9000
+      max-amount: 9999
+      min-count: 3
+      window-hours: 24
+      weight: 60
+    rapid-movement:
+      enabled: true
+      min-percent-out: 0.8
+      window-hours: 48
+      weight: 70
+    high-risk-jurisdiction:
+      enabled: true
+      weight: 80
+      jurisdictions: IR,KP,SY,CU,MM
+    behavioral-deviation:
+      enabled: true
+      multiplier: 3.0
+      lookback-days: 90
+      weight: 50

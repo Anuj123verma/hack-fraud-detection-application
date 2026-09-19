@@ -1,0 +1,3 @@
+customerRef,fullName,idNumber,customerType,baseRiskRating
+CUST-101,Arjun Nair,ID-8101,RETAIL,LOW
+CUST-102,Meera Iyer,ID-8102,RETAIL,MEDIUM

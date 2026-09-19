@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Sentinel AML - MeridianTrust</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+<header class="bg-slate-800 text-white px-6 py-3 flex items-center justify-between flex-wrap gap-2">
+  <div>
+    <h1 class="text-lg font-semibold">Sentinel AML</h1>
+    <p class="text-xs text-slate-400">MeridianTrust Real-Time Transaction Monitoring</p>
+  </div>
+  <div id="login-bar" class="flex items-center gap-2 text-sm">
+    <input id="login-user" placeholder="username" class="text-black px-2 py-1 rounded w-32"/>
+    <input id="login-pass" type="password" placeholder="password" class="text-black px-2 py-1 rounded w-32"/>
+    <button id="login-btn" class="bg-emerald-600 px-3 py-1 rounded hover:bg-emerald-500">Sign in</button>
+    <span id="login-status" class="text-slate-300"></span>
+  </div>
+</header>
+
+<nav class="flex gap-1 bg-slate-700 px-4">
+  <button class="tab-btn active" data-tab="alerts">Alert Queue</button>
+  <button class="tab-btn" data-tab="cases">Cases</button>
+  <button class="tab-btn" data-tab="customers">Customers / Timeline</button>
+</nav>
+
+<main class="p-4 max-w-7xl mx-auto">
+
+  <section id="tab-alerts" class="tab-panel grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div>
+      <h2 class="font-semibold mb-2">Alert Queue <span class="text-xs text-gray-500">(sorted by risk score)</span></h2>
+      <div id="alerts-list"></div>
+    </div>
+    <div>
+      <h2 class="font-semibold mb-2">Alert Detail</h2>
+      <div id="alert-detail" class="bg-white rounded shadow p-4 text-sm text-gray-500">Sign in, then select an alert from the queue.</div>
+    </div>
+  </section>
+
+  <section id="tab-cases" class="tab-panel hidden grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div>
+      <h2 class="font-semibold mb-2">Case Queue <span class="text-xs text-gray-500">(by priority)</span></h2>
+      <div id="cases-list"></div>
+    </div>
+    <div>
+      <h2 class="font-semibold mb-2">Case Detail</h2>
+      <div id="case-detail" class="bg-white rounded shadow p-4 text-sm text-gray-500">Select a case from the queue.</div>
+    </div>
+  </section>
+
+  <section id="tab-customers" class="tab-panel hidden grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div>
+      <h2 class="font-semibold mb-2">Customers</h2>
+      <div id="customers-list"></div>
+    </div>
+    <div>
+      <h2 class="font-semibold mb-2">Transaction Timeline</h2>
+      <div id="customer-timeline" class="bg-white rounded shadow p-4 text-sm text-gray-500">Select a customer to see their transaction history.</div>
+    </div>
+  </section>
+
+</main>
+
+<script type="module" src="/js/app.js"></script>
+</body>
+</html>

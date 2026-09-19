@@ -1,0 +1,5 @@
+externalTxnId,accountNumber,direction,amount,currency,counterpartyName,counterpartyJurisdiction,channel,txnTimestamp
+TXN-BULK-001,ACC-101,DEBIT,9100,INR,Cash Out,IN,CASH,
+TXN-BULK-002,ACC-101,DEBIT,9600,INR,Cash Out,IN,CASH,
+TXN-BULK-003,ACC-101,DEBIT,9900,INR,Cash Out,IN,CASH,
+TXN-BULK-004,ACC-102,DEBIT,12000,INR,Wire Transfer,US,WIRE,
